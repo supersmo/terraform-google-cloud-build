@@ -1,0 +1,7 @@
+steps:
+  - name: 'ubuntu'
+    args: ['echo', "REPO_NAME: $REPO_NAME"]
+
+#steps:
+#- name: 'hashicorp/terraform:latest'
+#  args: ['plan', '--out planfile']
