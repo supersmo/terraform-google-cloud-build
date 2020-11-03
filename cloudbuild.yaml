@@ -9,13 +9,13 @@ steps:
   #    Custom environment variables defined in cloud build triggers need to be prefixed with '_'
   env:
 #   A bucket for storing terraform state files is created before hand
-    - BUCKET_FOR_TERRAFORM_STATE_FILE = ${PROJECT_ID}-tf-state
-    - PATH_IN_BUCKET_FOR_TERRAFORM_STATE_FILE = $_HACKATHON_TEAM_NAME/$REPO_NAME
+    - BUCKET_FOR_TERRAFORM_STATE_FILE=${PROJECT_ID}-tf-state
+    - PATH_IN_BUCKET_FOR_TERRAFORM_STATE_FILE=$_HACKATHON_TEAM_NAME/$REPO_NAME
 
 #     Terraform variables passed in as environment variables. Environment variables prefixed with TF_VAR will
 #     automatically be picked up as terraform variables. See variables.tf
-    - TF_VAR_HACKATHON_TEAM_NAME = $_HACKATHON_TEAM_NAME
-    - TF_VAR_DEPLOY_PROJECT = $PROJECT_ID
+    - TF_VAR_HACKATHON_TEAM_NAME=$_HACKATHON_TEAM_NAME
+    - TF_VAR_DEPLOY_PROJECT=$PROJECT_ID
 
   entrypoint: 'sh'
   args:
@@ -23,7 +23,8 @@ steps:
     - |
       # Specify terraform state file location and download necessary terraform providers
       #terraform init -backend-config="bucket=${BUCKET_FOR_TERRAFORM_STATE_FILE}" -backend-config="prefix=${PATH_IN_BUCKET_FOR_TERRAFORM_STATE_FILE}"
-      echo Bucket: $${BUCKET_FOR_TERRAFORM_STATE_FILE}
+      echo Bucket $${BUCKET_FOR_TERRAFORM_STATE_FILE}
+      echo Bucket ${BUCKET_FOR_TERRAFORM_STATE_FILE}
       terraform init -backend-config="bucket=$${BUCKET_FOR_TERRAFORM_STATE_FILE}" -backend-config="prefix=hardcoded"
 
       # Verify that the terraform is valid
