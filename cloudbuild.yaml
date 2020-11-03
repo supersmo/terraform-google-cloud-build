@@ -17,7 +17,7 @@ steps:
     - TF_VAR_HACKATHON_TEAM_NAME = $_HACKATHON_TEAM_NAME
     - TF_VAR_DEPLOY_PROJECT = $PROJECT_ID
 
-  entrypoint: 'bash'
+  entrypoint: 'sh'
   args:
     - '-c'
     - |
