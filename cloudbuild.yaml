@@ -11,6 +11,7 @@ steps:
 #   A bucket for storing terraform state files is created before hand
     - BUCKET_FOR_TERRAFORM_STATE_FILE=${PROJECT_ID}-tf-state
     - PATH_IN_BUCKET_FOR_TERRAFORM_STATE_FILE=$_HACKATHON_TEAM_NAME/$REPO_NAME
+    - 'experiment=$$(echo "$_HACKATHON_TEAM_NAME" | tr "_ " -)'
 
 #     Terraform variables passed in as environment variables. Environment variables prefixed with TF_VAR will
 #     automatically be picked up as terraform variables. See variables.tf
