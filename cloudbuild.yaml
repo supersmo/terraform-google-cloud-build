@@ -11,7 +11,6 @@ steps:
 #   A bucket for storing terraform state files is created before hand
     - BUCKET_FOR_TERRAFORM_STATE_FILE=${PROJECT_ID}-tf-state
     - PATH_IN_BUCKET_FOR_TERRAFORM_STATE_FILE=$_HACKATHON_TEAM_NAME/$REPO_NAME
-    - 'experiment=$$(echo "$_HACKATHON_TEAM_NAME" | tr "_ " -)'
 
 #     Terraform variables passed in as environment variables. Environment variables prefixed with TF_VAR will
 #     automatically be picked up as terraform variables. See variables.tf
@@ -22,7 +21,6 @@ steps:
   args:
     - '-c'
     - |
-      echo $$experiment
       TF_VAR_HACKATHON_TEAM_NAME=$$(echo "$$TF_VAR_HACKATHON_TEAM_NAME" | tr '_ ' -)
       # Specify terraform state file location and download necessary terraform providers
       terraform init -backend-config="bucket=$${BUCKET_FOR_TERRAFORM_STATE_FILE}" -backend-config="prefix=$${PATH_IN_BUCKET_FOR_TERRAFORM_STATE_FILE}"
@@ -32,3 +30,6 @@ steps:
 
       # Create a terraform plan and store the plan in a file called planfile
       terraform plan --out planfile
+
+      # Apply the terraform plan
+      terraform apply -input=false planfile
