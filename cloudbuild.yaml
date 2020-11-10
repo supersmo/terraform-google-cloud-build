@@ -1,7 +1,3 @@
-#steps:
-#  - name: 'ubuntu'
-#    args: ['echo', "REPO_NAME: $REPO_NAME"]
-
 steps:
 - name: 'hashicorp/terraform:latest'
   id: 'terraform plan'
@@ -30,6 +26,3 @@ steps:
 
       # Create a terraform plan and store the plan in a file called planfile
       terraform plan --out planfile
-
-      # Apply the terraform plan
-      terraform apply -input=false planfile
