@@ -1,4 +1,19 @@
 # Hackathon instructions
+Welcome hackathoners!
+
+## Rules ##
+* Use a **private** repo!  
+You don't want to risk having anyone out there create merge requests that create stuff in your gcp project.
+* No secrets in the code!
+
+## Intro to this repo ##
+This repo is used to quickly get you up to speed with deploying to your gcp project from github. 
+If you're up to the task with also working with Terraform you can use this repo as a starting pointfor that as well.
+
+The terraform module creates:
+* pubsub topic
+* service account
+* permission for the service acount to publish to the pubsub topic
 
 ## Mirror this repo to your own private repo
 1. Create a **private** repo in GitHub under your user name called terraform-google-cloud-build
@@ -9,6 +24,12 @@ Create a variable for your username:
 ```
 github_user=<your-github_user>
 ```
+
+Change directory to where you want to create your repo (/c is c: if you're on windows) e.g.:
+```shell script
+cd /c/ws/github.com
+```
+
 Create a bare clone of the repository: 
 ```
 git clone --bare https://github.com/supersmo/terraform-google-cloud-build.git
@@ -74,3 +95,13 @@ git config user.email <your e-mail>
 11. Edit the trigger to only trigger on the main branch
 ![](images/9_edit_trigger_for_main1.png)
 ![](images/9_edit_trigger_for_main2.png)
+
+12. Make a branch and push the branch to trigger a terraform plan
+
+13. Inspect the plan in cloud build
+
+14. If you are satisfied with the plan create a pull request to merge the branch to main.
+
+15. Check the terraform apply log in cloud build
+
+16. Navigate in your gcp project to see that the resources were created.
