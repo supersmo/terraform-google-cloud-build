@@ -36,35 +36,34 @@ git config user.email <your e-mail>
 ```
 
 ## Make pushes to your repo trigger cloud build ##
-### Setup Github to Cloud Build integration 
-1. Log in to gcp and go to your gcp project: https://console.google.com
-![](images/0_select_project.png)
+### Setup Github to Cloud Build integration ###
+1. Log in to gcp and go to your gcp project: https://console.google.com  
+![](images/0_select_project.png)  
 
-2. Go to Cloud Build –> Triggers and click Connect Repository
-![](images/1_connect_repository.png)
+2. Go to Cloud Build –> Triggers and click Connect Repository  
+![](images/1_connect_repository.png)  
 
-3. Select source:
-![](images/2_select_source.png)
+3. Select source:  
+![](images/2_select_source.png)  
 
-4. Log in to your GitHub account (if you're not already logged in)
+4. Log in to your GitHub account (if you're not already logged in)    
 
-5. Install the cloud build app on your **private** repo
-![](images/3_install_google_cloud_build_on_repo.png)
+5. Install the cloud build app on your **private** repo  
+![](images/3_install_google_cloud_build_on_repo.png)  
 
-6. Select the google project to connect to
-![](images/4_select_google_project_to_connect_to.png)
+6. Select the google project to connect to  
+![](images/4_select_google_project_to_connect_to.png)  
 
-7. Connect your repository
-![](images/5_select_github_repo.png)
+7. Connect your repository  
+![](images/5_select_github_repo.png)  
 
-8. Create a default push trigger
-![](images/6_create_push_trigger.png)
+8. Create a default push trigger  
+![](images/6_create_push_trigger.png)  
 
-### Modify default trigger
+### Modify default trigger ###
 9. Edit the default push trigger to:
 * support different triggers for main and feature branches
-* add an environment variable
-
+* add an environment variable  
 ![](images/7_edit_trigger_1.png)
 ![](images/7_edit_trigger_2.png)
 
