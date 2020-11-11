@@ -66,7 +66,13 @@ git config user.email <your e-mail>
 1. Select source:  
 ![](images/2_select_source.png)  
 
-1. Log in to your GitHub account (if you're not already logged in)    
+1. Log in to your GitHub account if you're not already logged in    
+
+1. Approve OAuth request to your GitHub account
+![](images/2b_authroize_google_cloud_build.png)
+
+1. Click install Google Cloud Build
+![](images/2c_install_google_cloud_build.png)
 
 1. Install the cloud build app on your **private** repo  
 ![](images/3_install_google_cloud_build_on_repo.png)  
@@ -88,10 +94,10 @@ git config user.email <your e-mail>
 ![](images/7_edit_trigger_2.png)
 
 ### Create a trigger for the main branch ###
-1. Create a trigger for the main branch:Duplicate the trigger to create a separate trigger and cloudbuild.yaml for the main branch
+1. Create a trigger for the main branch by duplicating the trigger
 ![](images/8_duplicate_trigger.png)
 
-1. Edit the trigger to only trigger on the main branch
+1. Edit the duplicate trigger to only trigger on the main branch
 ![](images/9_edit_trigger_for_main1.png)
 ![](images/9_edit_trigger_for_main2.png)
 
