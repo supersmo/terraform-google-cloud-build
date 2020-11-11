@@ -56,8 +56,7 @@ git config user.name <your name>
 git config user.email <your e-mail>
 ```
 
-## Make pushes to your repo trigger cloud build ##
-### Setup Github to Cloud Build integration ###
+## Setup Github to Cloud Build integration ##
 1. Log in to gcp and go to your gcp project: https://console.google.com  
 ![](images/0_select_project.png)  
 
