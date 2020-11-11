@@ -48,7 +48,7 @@ git config user.email <your e-mail>
 
 4. Log in to your GitHub account (if you're not already logged in)
 
-5. Install the cloud build app on your **private**
+5. Install the cloud build app on your **private** repo
 ![](images/3_install_google_cloud_build_on_repo.png)
 
 6. Select the google project to connect to
