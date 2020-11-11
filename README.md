@@ -56,7 +56,7 @@ git config user.name <your name>
 git config user.email <your e-mail>
 ```
 
-## Setup Github to Cloud Build integration ##
+## Set up Github to Cloud Build integration ##
 1. Log in to gcp and go to your gcp project: https://console.google.com  
 ![](images/0_select_project.png)  
 
