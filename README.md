@@ -17,7 +17,7 @@ The terraform module creates:
 
 ## Mirror this repo to your own private repo
 1. Create a **private** repo in GitHub under your user name called terraform-google-cloud-build
-2. Mirror  the supersmo/terraform-google-cloud-build repo to your new private repo by following these instructions:
+1. Mirror  the supersmo/terraform-google-cloud-build repo to your new private repo by following these instructions:
 
 Open Git Bash
 Create a variable for your username:
@@ -60,47 +60,47 @@ git config user.email <your e-mail>
 1. Log in to gcp and go to your gcp project: https://console.google.com  
 ![](images/0_select_project.png)  
 
-2. Go to Cloud Build –> Triggers and click Connect Repository  
+1. Go to Cloud Build –> Triggers and click Connect Repository  
 ![](images/1_connect_repository.png)  
 
-3. Select source:  
+1. Select source:  
 ![](images/2_select_source.png)  
 
-4. Log in to your GitHub account (if you're not already logged in)    
+1. Log in to your GitHub account (if you're not already logged in)    
 
-5. Install the cloud build app on your **private** repo  
+1. Install the cloud build app on your **private** repo  
 ![](images/3_install_google_cloud_build_on_repo.png)  
 
-6. Select the google project to connect to  
+1. Select the google project to connect to  
 ![](images/4_select_google_project_to_connect_to.png)  
 
-7. Connect your repository  
+1. Connect your repository  
 ![](images/5_select_github_repo.png)  
 
-8. Create a default push trigger  
+1. Create a default push trigger  
 ![](images/6_create_push_trigger.png)  
 
 ### Modify default trigger ###
-9. Edit the default push trigger to:
+1. Edit the default push trigger to:
 * support different triggers for main and feature branches
 * add an environment variable  
 ![](images/7_edit_trigger_1.png)
 ![](images/7_edit_trigger_2.png)
 
 ### Create a trigger for the main branch ###
-10. Create a trigger for the main branch:Duplicate the trigger to create a separate trigger and cloudbuild.yaml for the main branch
+1. Create a trigger for the main branch:Duplicate the trigger to create a separate trigger and cloudbuild.yaml for the main branch
 ![](images/8_duplicate_trigger.png)
 
-11. Edit the trigger to only trigger on the main branch
+1. Edit the trigger to only trigger on the main branch
 ![](images/9_edit_trigger_for_main1.png)
 ![](images/9_edit_trigger_for_main2.png)
 
-12. Make a branch and push the branch to trigger a terraform plan
+1. Make a branch and push the branch to trigger a terraform plan
 
-13. Inspect the plan in cloud build
+1. Inspect the plan in cloud build
 
-14. If you are satisfied with the plan create a pull request to merge the branch to main.
+1. If you are satisfied with the plan create a pull request to merge the branch to main.
 
-15. Check the terraform apply log in cloud build
+1. Check the terraform apply log in cloud build
 
-16. Navigate in your gcp project to see that the resources were created.
+1. Navigate in your gcp project to see that the resources were created.
