@@ -31,26 +31,26 @@ cd /c/ws/github.com
 ```
 
 Create a bare clone of the repository: 
-```
+```shell script
 git clone --bare https://github.com/supersmo/terraform-google-cloud-build.git
 ```
 Mirror-push to the new repository: 
-```
+```shell script
 git push --bare https://github.com/${github_user}/terraform-google-cloud-build.git
 ```
 Remove the temporary local repository you created earlier. 
-```
+```shell script
 cd ..
 rm -rf terraform-google-cloud-build.git
 ```
 
 Clone the repository: 
-```
+```shell script
 git clone https://github.com/${github_user}/terraform-google-cloud-build.git
 ```
 
 Git will use the username and e-mail stored in the git global config which probably already is configured to be your work e-mail. If you wish to change the commit username and email only for this repo:
-```
+```shell script
 cd terraform-google-cloud-build
 git config user.name <your name>
 git config user.email <your e-mail>
